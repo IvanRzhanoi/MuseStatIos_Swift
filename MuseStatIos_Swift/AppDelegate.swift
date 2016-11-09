@@ -1,46 +1,84 @@
 //
-//  AppDelegate.swift
-//  MuseStatIos_Swift
+//  Interaxon, Inc. 2015
+//  MuseStatsIos
 //
-//  Created by Ivan Rzhanoi on 07/11/2016.
-//  Copyright © 2016 Ivan Rzhanoi. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-
-
+    
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        self.simpleController = SimpleController(nibName: "SimpleController", bundle: nil)
+        //self.window!.rootViewController! = simpleController
+    }
+    /*
+     * Simple example of getting data from the "*.muse" file
+     */
+    
+    func playMuseFile() {
+        print("start play muse")
+        var paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        var documentsDirectory = paths[0]
+        var filePath = URL(fileURLWithPath: documentsDirectory).appendingPathComponent("testfile.muse").absoluteString
+        var fileReader: IXNMuseFileReader = IXNMuseFileFactory.museFileReader(withPathString: filePath)
+        
+        while fileReader.gotoNextMessage() != nil {
+            var type = fileReader.getMessageType()
+            var id_number = fileReader.getMessageId()
+            var timestamp: Int64 = fileReader.getMessageTimestamp()
+            print("type: \(type), id: \(id_number), timestamp: \(timestamp)")
+            switch type {
+            case IXNMessageType.eeg, IXNMessageType.quantization, IXNMessageType.accelerometer, IXNMessageType.battery:
+                var packet = fileReader.getDataPacket()?.packetType()
+                print("data packet = \(packet)")
+                
+            case IXNMessageType.version:
+                var version = fileReader.getVersion()
+                print("version = \(version?.getFirmwareVersion)")
+                
+            case IXNMessageType.configuration:
+                var config = fileReader.getConfiguration()
+                print("configuration = \(config?.getBluetoothMac)")
+                
+            case IXNMessageType.annotation:
+                var annotation = fileReader.getAnnotation()
+                print("annotation = \(annotation.data)")
+                
+            default:
+                break
+            }
+        }
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+        self.simpleController.applicationWillResignActive()
     }
-
+    
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
-
+    
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
+    
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    private(set) var simpleController: SimpleController!
 }
-
+//
+//  Interaxon, Inc. 2015
+//  MuseStatsIos
+//

@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		229C81731DD172A700D2DDF1 /* SimpleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C81721DD172A700D2DDF1 /* SimpleController.m */; };
+		229C81751DD1784C00D2DDF1 /* SimpleController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 229C81741DD1784C00D2DDF1 /* SimpleController.xib */; };
 		22C23A071DD074C600B83272 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C23A061DD074C600B83272 /* AppDelegate.swift */; };
 		22C23A091DD074C600B83272 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C23A081DD074C600B83272 /* ViewController.swift */; };
 		22C23A0C1DD074C600B83272 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22C23A0A1DD074C600B83272 /* Main.storyboard */; };
 		22C23A0E1DD074C600B83272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C23A0D1DD074C600B83272 /* Assets.xcassets */; };
 		22C23A111DD074C600B83272 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22C23A0F1DD074C600B83272 /* LaunchScreen.storyboard */; };
+		22C23A1A1DD0776D00B83272 /* Muse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C23A181DD0776D00B83272 /* Muse.framework */; };
+		22C23A1B1DD0776D00B83272 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C23A191DD0776D00B83272 /* libc++.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		224E1A471DD3386700E66E29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		229C81701DD172A700D2DDF1 /* MuseStatIos_Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MuseStatIos_Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		229C81711DD172A700D2DDF1 /* SimpleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleController.h; sourceTree = "<group>"; };
+		229C81721DD172A700D2DDF1 /* SimpleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleController.m; sourceTree = "<group>"; };
+		229C81741DD1784C00D2DDF1 /* SimpleController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleController.xib; sourceTree = "<group>"; };
 		22C23A031DD074C600B83272 /* MuseStatIos_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseStatIos_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C23A061DD074C600B83272 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22C23A081DD074C600B83272 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		22C23A0B1DD074C600B83272 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22C23A0D1DD074C600B83272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22C23A101DD074C600B83272 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22C23A121DD074C600B83272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22C23A181DD0776D00B83272 /* Muse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Muse.framework; sourceTree = "<group>"; };
+		22C23A191DD0776D00B83272 /* libc++.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = "libc++.tbd"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C23A1B1DD0776D00B83272 /* libc++.tbd in Frameworks */,
+				22C23A1A1DD0776D00B83272 /* Muse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +50,8 @@
 		22C239FA1DD074C600B83272 = {
 			isa = PBXGroup;
 			children = (
+				22C23A181DD0776D00B83272 /* Muse.framework */,
+				22C23A191DD0776D00B83272 /* libc++.tbd */,
 				22C23A051DD074C600B83272 /* MuseStatIos_Swift */,
 				22C23A041DD074C600B83272 /* Products */,
 			);
@@ -54,12 +68,16 @@
 		22C23A051DD074C600B83272 /* MuseStatIos_Swift */ = {
 			isa = PBXGroup;
 			children = (
+				229C81741DD1784C00D2DDF1 /* SimpleController.xib */,
+				229C81711DD172A700D2DDF1 /* SimpleController.h */,
+				229C81721DD172A700D2DDF1 /* SimpleController.m */,
 				22C23A061DD074C600B83272 /* AppDelegate.swift */,
 				22C23A081DD074C600B83272 /* ViewController.swift */,
 				22C23A0A1DD074C600B83272 /* Main.storyboard */,
 				22C23A0D1DD074C600B83272 /* Assets.xcassets */,
 				22C23A0F1DD074C600B83272 /* LaunchScreen.storyboard */,
 				22C23A121DD074C600B83272 /* Info.plist */,
+				229C81701DD172A700D2DDF1 /* MuseStatIos_Swift-Bridging-Header.h */,
 			);
 			path = MuseStatIos_Swift;
 			sourceTree = "<group>";
@@ -97,6 +115,7 @@
 					22C23A021DD074C600B83272 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = FF8XS2JGH6;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -127,6 +146,7 @@
 				22C23A111DD074C600B83272 /* LaunchScreen.storyboard in Resources */,
 				22C23A0E1DD074C600B83272 /* Assets.xcassets in Resources */,
 				22C23A0C1DD074C600B83272 /* Main.storyboard in Resources */,
+				229C81751DD1784C00D2DDF1 /* SimpleController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +159,7 @@
 			files = (
 				22C23A091DD074C600B83272 /* ViewController.swift in Sources */,
 				22C23A071DD074C600B83272 /* AppDelegate.swift in Sources */,
+				229C81731DD172A700D2DDF1 /* SimpleController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +169,7 @@
 		22C23A0A1DD074C600B83272 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				22C23A0B1DD074C600B83272 /* Base */,
+				224E1A471DD3386700E66E29 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -261,11 +282,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = FF8XS2JGH6;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MuseStatIos_Swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Ivan-Rzhanoi.MuseStatIos-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "MuseStatIos_Swift/MuseStatIos_Swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -274,11 +308,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = FF8XS2JGH6;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MuseStatIos_Swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Ivan-Rzhanoi.MuseStatIos-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "MuseStatIos_Swift/MuseStatIos_Swift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -302,6 +348,7 @@
 				22C23A171DD074C600B83272 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
