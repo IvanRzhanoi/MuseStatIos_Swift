@@ -30,11 +30,11 @@
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         self.manager = [IXNMuseManagerIos sharedManager];
         [self.manager setMuseListener:self];
-        self.tableView = [[UITableView alloc] init];
+        //self.tableView = [[UITableView alloc] init];
 
-        self.logView = [[UITextView alloc] init];
+        //self.logView = [[UITextView alloc] init];
         self.logLines = [NSMutableArray array];
-        [self.logView setText:@""];
+        //[self.logView setText:@""];
         
         [[IXNLogManager instance] setLogListener:self];
         NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
@@ -54,7 +54,7 @@
     [self.logLines insertObject:line atIndex:0];
     
     dispatch_async(dispatch_get_main_queue(), ^ {
-        [self.logView setText:[self.logLines componentsJoinedByString:@"\n"]];
+        //[self.logView setText:[self.logLines componentsJoinedByString:@"\n"]];
     });
 }
 
@@ -63,7 +63,9 @@
 }
 
 - (void)museListChanged {
-    [self.tableView reloadData];
+    //[self.connecting];
+    
+    //[self.tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -154,7 +156,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
          [packet.values[IXNEegEEG3] doubleValue],
          [packet.values[IXNEegEEG4] doubleValue]];
         
-        self.Alpha.text = [NSString stringWithFormat: @"%f", [packet.values[IXNEegEEG1] doubleValue]];
+        //self.Alpha.text = [NSString stringWithFormat: @"%f", [packet.values[IXNEegEEG1] doubleValue]];
     }
 }
 
@@ -177,11 +179,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (IBAction)scan:(id)sender {
     [self.manager startListening];
-    [self.tableView reloadData];
+    //[self.tableView reloadData];
 }
 
 - (IBAction)stopScan:(id)sender {
     [self.manager stopListening];
-    [self.tableView reloadData];
+    //[self.tableView reloadData];
 }
 @end
