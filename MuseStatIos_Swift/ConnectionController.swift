@@ -242,7 +242,12 @@ class ConnectionController: UIViewController, IXNMuseConnectionListener, IXNMuse
     
     func receive(_ packet: IXNMuseDataPacket?, muse: IXNMuse?) {
         if packet?.packetType() == IXNMuseDataPacketType.alphaAbsolute || packet?.packetType() == IXNMuseDataPacketType.eeg {
-            print("Alpha: \(IXNEeg.EEG1.rawValue) Beta: \(IXNEeg.EEG2.rawValue) Gamma: \(IXNEeg.EEG3.rawValue) Theta: \(IXNEeg.EEG4.rawValue)")
+            
+            if let info = packet?.values() {
+                print("Alpha: \(info[0]) Beta: \(IXNEeg.EEG2.rawValue) Gamma: \(IXNEeg.EEG3.rawValue) Theta: \(IXNEeg.EEG4.rawValue)")
+            }
+            
+            print("Alpha: \(packet?.values()[0]) Beta: \(IXNEeg.EEG2.rawValue) Gamma: \(IXNEeg.EEG3.rawValue) Theta: \(IXNEeg.EEG4.rawValue)")
             print("%5.2f %5.2f %5.2f %5.2f", packet?.values() ?? 0)
         }
     }
