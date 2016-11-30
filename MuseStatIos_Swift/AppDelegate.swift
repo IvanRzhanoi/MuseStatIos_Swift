@@ -21,30 +21,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func playMuseFile() {
         print("start play muse")
         var paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        var documentsDirectory = paths[0]
-        var filePath = URL(fileURLWithPath: documentsDirectory).appendingPathComponent("testfile.muse").absoluteString
-        var fileReader: IXNMuseFileReader = IXNMuseFileFactory.museFileReader(withPathString: filePath)
+        let documentsDirectory = paths[0]
+        let filePath = URL(fileURLWithPath: documentsDirectory).appendingPathComponent("testfile.muse").absoluteString
+        let fileReader: IXNMuseFileReader = IXNMuseFileFactory.museFileReader(withPathString: filePath)
         
         while fileReader.gotoNextMessage() != nil {
-            var type = fileReader.getMessageType()
-            var id_number = fileReader.getMessageId()
-            var timestamp: Int64 = fileReader.getMessageTimestamp()
+            let type = fileReader.getMessageType()
+            let id_number = fileReader.getMessageId()
+            let timestamp: Int64 = fileReader.getMessageTimestamp()
             print("type: \(type), id: \(id_number), timestamp: \(timestamp)")
             switch type {
             case IXNMessageType.eeg, IXNMessageType.quantization, IXNMessageType.accelerometer, IXNMessageType.battery:
-                var packet = fileReader.getDataPacket()?.packetType()
+                let packet = fileReader.getDataPacket()?.packetType()
                 print("data packet = \(packet)")
                 
             case IXNMessageType.version:
-                var version = fileReader.getVersion()
+                let version = fileReader.getVersion()
                 print("version = \(version?.getFirmwareVersion)")
                 
             case IXNMessageType.configuration:
-                var config = fileReader.getConfiguration()
+                let config = fileReader.getConfiguration()
                 print("configuration = \(config?.getBluetoothMac)")
                 
             case IXNMessageType.annotation:
-                var annotation = fileReader.getAnnotation()
+                let annotation = fileReader.getAnnotation()
                 print("annotation = \(annotation.data)")
                 
             default:

@@ -17,7 +17,7 @@
 
 /**
  * Called when the list of Muses detected by MuseManager has changed.
- * <ul>
+ * ul
  * <li>You will receive 1 callback for each headband discovered and added to the list.
  * \if ANDROID_ONLY
  * For %Muse 2014 (\link com.choosemuse.libmuse.MuseModel.MU_01 MU_01\endlink)

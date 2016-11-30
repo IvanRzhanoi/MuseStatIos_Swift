@@ -28,7 +28,7 @@
  * \sa com.choosemuse.libmuse.MuseDataPacket.getAccelerometerValue()
  * \endif
  * \if IOS_ONLY
- * \sa \link IXNMuseDataPacketType::IXNMuseDataPacketTypeAccelerometer IXNMuseDataPacketTypeAccelerometer\endlink
+ // sa link IXNMuseDataPacketType::IXNMuseDataPacketTypeAccelerometer IXNMuseDataPacketTypeAccelerometer\endlink
  * \sa IXNMuseDataPacket::getAccelerometerValue:
  * \endif
  */
@@ -54,7 +54,7 @@ typedef NS_ENUM(NSInteger, IXNAccelerometer)
     IXNAccelerometerZ,
     /**
      * Acceleration along the Forward/Backward axis value in g.  Positive values indicate acceleration forward.
-     * \deprecated Use
+     deprecated Use
      * \if ANDROID_ONLY
      * Accelerometer.X
      * \elseif IOS_ONLY
@@ -65,7 +65,7 @@ typedef NS_ENUM(NSInteger, IXNAccelerometer)
     IXNAccelerometerForwardBackward,
     /**
      * Acceleration along the Up/Down axis value in g.  Positive values indicate acceleration up.
-     * \deprecated Use
+     * deprecated Use
      * \if ANDROID_ONLY
      * Accelerometer.Z
      * \elseif IOS_ONLY
@@ -76,7 +76,7 @@ typedef NS_ENUM(NSInteger, IXNAccelerometer)
     IXNAccelerometerUpDown,
     /**
      * Acceleration along the Left/Right axis value in g.  Positive values indicate acceleration left.
-     * \deprecated Use
+     * deprecated Use
      * \if ANDROID_ONLY
      * Accelerometer.Y
      * \elseif IOS_ONLY

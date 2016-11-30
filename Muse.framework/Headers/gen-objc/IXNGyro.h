@@ -24,7 +24,7 @@
  * \sa com.choosemuse.libmuse.MuseDataPacket.getGyroValue()
  * \endif
  * \if IOS_ONLY
- * \sa \link IXNMuseDataPacketType::IXNMuseDataPacketTypeGyro IXNMuseDataPacketTypeGyro\endlink
+ * sa \link IXNMuseDataPacketType::IXNMuseDataPacketTypeGyro IXNMuseDataPacketTypeGyro\endlink
  * \sa IXNMuseDataPacket::getGyroValue:
  * \endif
  */
@@ -51,7 +51,7 @@ typedef NS_ENUM(NSInteger, IXNGyro)
     /**
      * Rotation about the Forward/Backward axis value in degrees per second.
      * Positive values increase when tilting to the right.
-     * \deprecated Use
+     * deprecated Use
      * \if ANDROID_ONLY
      * Gyro.X
      * \elseif IOS_ONLY
@@ -63,7 +63,7 @@ typedef NS_ENUM(NSInteger, IXNGyro)
     /**
      * Rotation about the Up/Down axis value in degrees per second.
      * Positive values increase when looking down.
-     * \deprecated Use
+     * deprecated Use
      * \if ANDROID_ONLY
      * Gyro.Z
      * \elseif IOS_ONLY
@@ -75,7 +75,7 @@ typedef NS_ENUM(NSInteger, IXNGyro)
     /**
      * Rotation about the Left/Right axis value in degrees per second.
      * Positive values increase when looking left.
-     * \deprecated Use
+     * deprecated Use
      * \if ANDROID_ONLY
      * Gyro.Y
      * \elseif IOS_ONLY

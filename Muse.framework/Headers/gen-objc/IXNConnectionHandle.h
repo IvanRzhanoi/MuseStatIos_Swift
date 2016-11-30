@@ -17,7 +17,7 @@
 
 /**
  * Sends data to the remove device through the Bluetooth socket.
- * @param data - data to send
+ * param data - data to send
  */
 - (void)writeBytes:(nonnull NSString *)toWrite;
 

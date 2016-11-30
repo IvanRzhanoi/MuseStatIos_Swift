@@ -96,7 +96,7 @@
  * Also be aware that all packets will be received on the same thread as
  * execute() is run.
  *
- * <B>Threading:</b> This method is NOT thread safe. You must synchronize
+ * <B>Threading:</B> This method is NOT thread safe. You must synchronize
  * the Muse object on your own if you wish to call it concurrently from more
  * than one thread.
  */
@@ -165,7 +165,7 @@
  * Only implemented on low-energy Muses. Returns NaN if called on
  * non-low-energy Muses.
  *
- * <B>Threading:</b> method is thread-safe.
+ * <B>Threading:</B> method is thread-safe.
  * \return The RSSI of a low-energy %Muse or NaN if the %Muse is
  * not low-energy.
  */

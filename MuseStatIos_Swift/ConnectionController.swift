@@ -221,8 +221,6 @@ class ConnectionController: UIViewController, IXNMuseConnectionListener, IXNMuse
             state = "needs update"
         case IXNConnectionState.unknown:
             state = "unknown"
-        default:
-            assert(false, "impossible connection state received")
         }
         print("connect: \(state)")
     }

@@ -13,7 +13,7 @@
  * \sa com.choosemuse.libmuse.MuseDataPacket.getBatteryValue()
  * \endif
  * \if IOS_ONLY
- * \sa \link IXNMuseDataPacketType::IXNMuseDataPacketTypeBattery IXNMuseDataPacketTypeBattery\endlink
+ * sa \link IXNMuseDataPacketType::IXNMuseDataPacketTypeBattery IXNMuseDataPacketTypeBattery\endlink
  * \sa IXNMuseDataPacket::getBatteryValue:
  * \endif
  */

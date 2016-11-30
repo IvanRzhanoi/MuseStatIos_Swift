@@ -45,7 +45,7 @@
  * IXNReaderMuse
  * \endif
  *
- * \deprecated Use
+ * deprecated Use
  * \if ANDROID_ONLY
  * playback()
  * \elseif IOS_ONLY
@@ -74,7 +74,7 @@
  * \elseif IOS_ONLY
  * IXNReaderMuse
  * \endif
- * \deprecated Use
+ * deprecated Use
  * \if ANDROID_ONLY
  * playback()
  * \elseif IOS_ONLY

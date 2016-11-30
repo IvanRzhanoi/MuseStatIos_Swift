@@ -17,7 +17,7 @@
  * \sa com.choosemuse.libmuse.MuseDataPacket.getEegChannelValue()
  * \endif
  * \if IOS_ONLY
- * \sa \link IXNMuseDataPacketType::IXNMuseDataPacketTypeEeg IXNMuseDataPacketTypeEeg\endlink
+ * sa \link IXNMuseDataPacketType::IXNMuseDataPacketTypeEeg IXNMuseDataPacketTypeEeg\endlink
  * \sa IXNMuseDataPacket::getEegChannelValue:
  * \endif
  */

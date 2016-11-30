@@ -68,7 +68,7 @@
  * should use get_xxx_value() methods instead.
  *
  * \if ANDROID_ONLY
- * \deprecated Use
+ * deprecated Use
  * \link MuseDataPacket.getAccelerometerValue() MuseDataPacket.getAccelerometerValue()\endlink,
  * \link MuseDataPacket.getBatteryValue() MuseDataPacket.getBatteryValue()\endlink,
  * \link MuseDataPacket.getDrlRefValue() MuseDataPacket.getDrlRefValue()\endlink,
@@ -108,7 +108,7 @@
  * \if ANDROID_ONLY
  * \param channelNum the EEG channel to retrieve. (ie. Eeg.EEG1)
  * \elseif IOS_ONLY
- * \param channelNum the ::IXNEeg channel to retrieve (ie. \link IXNEeg IxnEegEEG1 \endlink)
+ * param channelNum the ::IXNEeg channel to retrieve (ie. \link IXNEeg IxnEegEEG1 \endlink)
  * \endif
  * \return the value requested.
  * \exception SIGABRT
@@ -134,7 +134,7 @@
  * \if ANDROID_ONLY
  * \param b the Battery value to retrieve (ie. Battery.MILLIVOLTS)
  * \elseif IOS_ONLY
- * \param b the ::IXNBattery value to retrieve (ie. \link IXNBattery IXNBatteryMillivolts \endlink)
+ * param b the ::IXNBattery value to retrieve (ie. \link IXNBattery IXNBatteryMillivolts \endlink)
  * \endif
  * \return the value requested.
  * \exception SIGABRT
@@ -161,7 +161,7 @@
  * \if ANDROID_ONLY
  * \param a the Accelerometer value to retrieve (ie. Accelerometer.UP_DOWN)
  * \elseif IOS_ONLY
- * \param a the ::IXNAccelerometer value to retrieve (ie. \link IXNAccelerometer IxnAccelerometerUpDown \endlink)
+ * param a the ::IXNAccelerometer value to retrieve (ie. \link IXNAccelerometer IxnAccelerometerUpDown \endlink)
  * \endif
  * \return the value requested.
  * \exception SIGABRT
@@ -188,7 +188,7 @@
  * \if ANDROID_ONLY
  * \param g the Gyro value to retrieve (ie. Gyro.UP_DOWN)
  * \elseif IOS_ONLY
- * \param g the ::IXNGyro value to retrieve (ie. \link IXNGyro IXNGyroUpDown \endlink)
+ * param g the ::IXNGyro value to retrieve (ie. \link IXNGyro IXNGyroUpDown \endlink)
  * \endif
  * \return the value requested.
  * \exception SIGABRT
@@ -215,7 +215,7 @@
  * \if ANDROID_ONLY
  * \param drl the DrlRef value to retrieve (ie. DrlRef.DRL)
  * \elseif IOS_ONLY
- * \param drl the ::IXNDrlRef value to retrieve (ie. \link IXNDrlRef IXNDrlRefDrl \endlink)
+ * param drl the ::IXNDrlRef value to retrieve (ie. \link IXNDrlRef IXNDrlRefDrl \endlink)
  * \endif
  * \return the value requested.
  * \exception SIGABRT

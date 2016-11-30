@@ -20,7 +20,7 @@
  * This just calls showBluetoothAccessoryPickerWithNameFilter:completion: with
  * a filter that passes devices starting with "Muse".
  *
- * \deprecated This will only display Muse 2014 (
+ // deprecated This will only display Muse 2014 (
  * \link ::IXNMuseModel::IXNMuseModelMu01 MU_01\endlink
  * ) headsets.  Instead set a IXNMuseListener with IXNMuseManager::setMuseListener:
  * to receive callbacks when either model of headband is detected.

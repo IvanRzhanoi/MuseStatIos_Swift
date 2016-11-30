@@ -249,7 +249,7 @@
  * \endif
  * \return A ReaderMuse configured with the parameters that were set.
  *
- * \deprecated Set the
+ * deprecated Set the
  * \if ANDROID_ONLY
  * EventLoop with withEventLoop()
  * \elseif IOS_ONLY

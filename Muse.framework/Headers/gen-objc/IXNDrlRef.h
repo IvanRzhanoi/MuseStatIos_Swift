@@ -13,7 +13,7 @@
  * \sa com.choosemuse.libmuse.MuseDataPacket.getDrlRefValue()
  * \endif
  * \if IOS_ONLY
- * \sa \link IXNMuseDataPacketType::IXNMuseDataPacketTypeDrlRef IXNMuseDataPacketTypeDrlRef\endlink
+ * sa \link IXNMuseDataPacketType::IXNMuseDataPacketTypeDrlRef IXNMuseDataPacketTypeDrlRef\endlink
  * \sa IXNMuseDataPacket::getDrlRefValue:
  * \endif
  */

@@ -62,7 +62,7 @@ typedef NS_ENUM(NSInteger, IXNMuseDataPacketType)
      * Packet stands in for n dropped samples of the accelerometer type.
      * Size of the values array for this packet is always 1.
      *
-     * \deprecated This is never emitted in an actual Muse session; instead,
+     * deprecated This is never emitted in an actual Muse session; instead,
      * NaN-filled packets of the basic type (EEG or ACCELEROMETER) are emitted
      * to stand in for dropped packets. This can only appear when reading
      * Muse files written with older versions of the library.
@@ -72,7 +72,7 @@ typedef NS_ENUM(NSInteger, IXNMuseDataPacketType)
      * Packet stands in for n dropped samples of the eeg type.
      * Size of the values array for this packet is always 1.
      *
-     * \deprecated This is never emitted in an actual Muse session; instead,
+     * deprecated This is never emitted in an actual Muse session; instead,
      * NaN-filled packets of the basic type (EEG or ACCELEROMETER) are emitted
      * to stand in for dropped packets. This can only appear when reading
      * Muse files written with older versions of the library.
