@@ -53,15 +53,19 @@ class ConnectionController: UIViewController, IXNMuseConnectionListener, IXNMuse
         super.viewDidLoad()
         
         //self.tableView.delegate = SimpleController()
+        
         // Do any additional setup after loading the view.
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        
         UIApplication.shared.isIdleTimerDisabled = true
-        if self.manager != nil {
-            self.manager = IXNMuseManagerIos.sharedManager()
-        }
+        
+        
+        //if self.manager != nil {
+        
+        self.manager = IXNMuseManagerIos.sharedManager()
+        
+        //}
     }
     
         override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: Bundle!) {
@@ -122,7 +126,7 @@ class ConnectionController: UIViewController, IXNMuseConnectionListener, IXNMuse
     }
     
     
-    // TODO: Investigate the line below. Something wrong with tableView or it's update. Maybe the wrong number of row.
+    // TODO: Investigate the line below. Something wrong with tableView or it's update. It requires the manual table refresh.
     func museListChanged() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -133,12 +137,14 @@ class ConnectionController: UIViewController, IXNMuseConnectionListener, IXNMuse
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let rows = connectionController.tableView(tableView, numberOfRowsInSection: section)
         return rows
-        //return 0        // I should try changing this value
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = connectionController.tableView(tableView, cellForRowAt: indexPath)
+        
+        
+        // The code below works fine. It is simplier to use only one line above, but in case someone would like to completely port it to swift, I kept it.
         
 //        let simpleTableIdentifier: String = "nil"
 //        let muses = self.manager.getMuses()
@@ -186,21 +192,29 @@ class ConnectionController: UIViewController, IXNMuseConnectionListener, IXNMuse
             print("Everything is fine!")
             //var synchronius = DispatchQueue
             //DispatchQueue.main.sync {
-                print("Everything is fine!")
-                
-                
-                
-                if self.muse == nil {
-                    print("Everything is fine!")
-                    self.muse = muse
-                    print("Everything is  STILL fine!")
-
-                } else if self.muse != muse {
-                    // TODO: Add the proper support for disconnecting this crap
-                    //self.muse.disconnect(false)
-                    self.muse = muse
-                }
+            
+            print("Everything is fine!")
+            
+            
+            // TODO: Add the proper checking, so it wouldn't be initialized each time
+            //if self.muse.getConfiguration() == nil {
+            
+            
+//            if self.muse == nil {
+//                print("Everything is fine!")
+//                self.muse = muse
+//                print("Everything is  STILL fine!")
+//
+//            } else if self.muse != muse {
+//                // TODO: Add the proper support for disconnecting
+//                //self.muse.disconnect(false)
+//                self.muse = muse
+//            }
             //}
+            
+            // T
+            self.muse = muse
+            
             print("It should call!\n")
             self.connect()
             print("======Choose device to connect: \(self.muse.getName()) \(self.muse.getMacAddress())======\n")
@@ -233,6 +247,10 @@ class ConnectionController: UIViewController, IXNMuseConnectionListener, IXNMuse
         self.muse.register(self, type: IXNMuseDataPacketType.artifacts)
         self.muse.register(self, type: IXNMuseDataPacketType.alphaAbsolute)
         
+        // TODO: Add register for other brainwaves
+        self.muse.register(self, type: IXNMuseDataPacketType.betaAbsolute)
+        
+        
         //self.muse.register(self, type: IXNMuseDataPacketType.eeg)
         
         self.muse.runAsynchronously()
@@ -242,11 +260,22 @@ class ConnectionController: UIViewController, IXNMuseConnectionListener, IXNMuse
         if packet?.packetType() == IXNMuseDataPacketType.alphaAbsolute || packet?.packetType() == IXNMuseDataPacketType.eeg {
             
             if let info = packet?.values() {
-                print("Alpha: \(info[0]) Beta: \(IXNEeg.EEG2.rawValue) Gamma: \(IXNEeg.EEG3.rawValue) Theta: \(IXNEeg.EEG4.rawValue)")
+                //print("Alpha: \(info[0]) Beta: \(IXNEeg.EEG2.rawValue) Gamma: \(IXNEeg.EEG3.rawValue) Theta: \(IXNEeg.EEG4.rawValue)")
+                print("Alpha: \(info[0]) \(info[1]) \(info[2]) \(info[3]) \(info[4]) \(info[5])")
             }
             
-            print("Alpha: \(packet?.values()[0]) Beta: \(IXNEeg.EEG2.rawValue) Gamma: \(IXNEeg.EEG3.rawValue) Theta: \(IXNEeg.EEG4.rawValue)")
-            print("%5.2f %5.2f %5.2f %5.2f", packet?.values() ?? 0)
+            //  Lines below are not exactly correct
+            //print("Alpha: \(packet?.values()[0]) Beta: \(IXNEeg.EEG2.rawValue) Gamma: \(IXNEeg.EEG3.rawValue) Theta: \(IXNEeg.EEG4.rawValue)")
+            //print("%5.2f %5.2f %5.2f %5.2f", packet?.values() ?? 0)
+        }
+        
+        // TODO: Add info for other brainwaves
+        if packet?.packetType() == IXNMuseDataPacketType.betaAbsolute || packet?.packetType() == IXNMuseDataPacketType.eeg {
+            
+            if let info = packet?.values() {
+                //print("Alpha: \(info[0]) Beta: \(IXNEeg.EEG2.rawValue) Gamma: \(IXNEeg.EEG3.rawValue) Theta: \(IXNEeg.EEG4.rawValue)")
+                print("Beta: \(info[0]) \(info[1]) \(info[2]) \(info[3]) \(info[4]) \(info[5])")
+            }
         }
     }
     
@@ -257,15 +286,25 @@ class ConnectionController: UIViewController, IXNMuseConnectionListener, IXNMuse
         self.isLastBlink = packet.blink
     }
     
+    
+//    TODO: Maybe I will delete this function, because it is stupid to just disconnect.
 //    func applicationWillResignActive() {
-//        // TODO: Maybe I will delete this function, because it is stupid to just disconnect.
 //        print("disconnecting before going into background")
 //        //self.muse.disconnect(true)
 //    }
     
     
-    @IBAction func disconnect(_ sender: AnyObject) {
-        //if self.muse.getConnectionState() == IXNConnectionState.connected {
+    @IBAction func disconnect(_ sender: Any) {
+        
+        // TODO: Make a proper disconnect. 
+        
+//        if self.muse.getConnectionState() == IXNConnectionState.connected {
+
+//        if self.muse != NSObject{
+//            self.muse.disconnect(true)
+//        }
+        
+        
         //self.muse.disconnect(true)
     }
     

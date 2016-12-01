@@ -38,15 +38,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIm-rg-O9p">
-                                <rect key="frame" x="166" y="320.5" width="43" height="30"/>
-                                <state key="normal" title="SWAG"/>
+                                <rect key="frame" x="170" y="320.5" width="35" height="30"/>
+                                <state key="normal" title="Scan"/>
                                 <connections>
                                     <action selector="scan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gPz-LF-yel"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQW-E4-RUA">
-                                <rect key="frame" x="327" y="320.5" width="32" height="30"/>
-                                <state key="normal" title="Stop"/>
+                                <rect key="frame" x="288" y="320.5" width="71" height="30"/>
+                                <state key="normal" title="Stop Scan"/>
                                 <connections>
                                     <action selector="stopScan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JCl-ie-oga"/>
                                 </connections>
@@ -60,12 +60,6 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="qeq-tb-Io5"/>
                                 </connections>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLt-wU-2Ig">
-                                <rect key="frame" x="264" y="325" width="44" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -81,10 +75,8 @@
                             <constraint firstItem="SQW-E4-RUA" firstAttribute="top" secondItem="guk-dB-S0Q" secondAttribute="bottom" constant="16" id="ear-6Z-2Ql"/>
                             <constraint firstItem="QzA-N3-63l" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fIA-hn-2vW"/>
                             <constraint firstItem="QzA-N3-63l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fM4-ZQ-1qz"/>
-                            <constraint firstItem="SQW-E4-RUA" firstAttribute="leading" secondItem="PLt-wU-2Ig" secondAttribute="trailing" constant="19" id="gEk-qz-Uaf"/>
                             <constraint firstItem="e5H-rt-OuS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="lq4-aY-Lr0"/>
                             <constraint firstItem="QzA-N3-63l" firstAttribute="top" secondItem="e5H-rt-OuS" secondAttribute="bottom" constant="16" id="qlb-I2-HbU"/>
-                            <constraint firstItem="PLt-wU-2Ig" firstAttribute="top" secondItem="guk-dB-S0Q" secondAttribute="bottom" constant="20.5" id="rDe-3V-mIj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QzA-N3-63l" secondAttribute="bottom" constant="16" id="tue-lv-IIQ"/>
                             <constraint firstItem="yIm-rg-O9p" firstAttribute="top" secondItem="guk-dB-S0Q" secondAttribute="bottom" constant="16" id="uHF-Vp-Hf3"/>
                         </constraints>
